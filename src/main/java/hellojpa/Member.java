@@ -1,11 +1,9 @@
 package hellojpa;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Member {
@@ -21,6 +19,10 @@ public class Member {
     @ManyToOne
     @JoinColumn(name = "TEAM_ID")
     private Team team;
+
+    @ManyToMany
+    @JoinTable(name = "MEMBER_PRODUCT")
+    private List<Product> products = new ArrayList<>();
 
     public Long getId() {
         return id;
