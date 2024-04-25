@@ -10,7 +10,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 
 @Entity
-public class Team {
+public class Team extends BaseEntity {
 
 	@Id
 	@GeneratedValue
