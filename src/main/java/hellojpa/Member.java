@@ -16,6 +16,12 @@ public class Member extends BaseEntity {
     @Column(name = "USERNAME")
     private String name;
 
+    @Embedded
+    private Period workPeriod;
+
+    @Embedded
+    private Address homeAddress;
+
     @ManyToOne
     @JoinColumn(name = "TEAM_ID")
     private Team team;
@@ -41,6 +47,22 @@ public class Member extends BaseEntity {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Period getWorkPeriod() {
+        return workPeriod;
+    }
+
+    public void setWorkPeriod(Period workPeriod) {
+        this.workPeriod = workPeriod;
+    }
+
+    public Address getHomeAddress() {
+        return homeAddress;
+    }
+
+    public void setHomeAddress(Address homeAddress) {
+        this.homeAddress = homeAddress;
     }
 
     public Team getTeam() {
